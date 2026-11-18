@@ -1,0 +1,183 @@
+{
+  "numeric_columns": [
+    "Tenure Months",
+    "Monthly Charges",
+    "Total Charges"
+  ],
+  "categorical_columns": [
+    "Gender",
+    "Senior Citizen",
+    "Partner",
+    "Dependents",
+    "Phone Service",
+    "Multiple Lines",
+    "Internet Service",
+    "Online Security",
+    "Online Backup",
+    "Device Protection",
+    "Tech Support",
+    "Streaming TV",
+    "Streaming Movies",
+    "Contract",
+    "Paperless Billing",
+    "Payment Method"
+  ],
+  "medians": [
+    29.0,
+    70.35,
+    1412.4
+  ],
+  "means": [
+    32.51907719609583,
+    64.71412599822538,
+    2287.2105323868677
+  ],
+  "scales": [
+    24.55486477389233,
+    30.12619072249574,
+    2260.896581646156
+  ],
+  "categorical_fill": [
+    "Male",
+    "No",
+    "No",
+    "No",
+    "Yes",
+    "No",
+    "Fiber optic",
+    "No",
+    "No",
+    "No",
+    "No",
+    "No",
+    "Yes",
+    "Month-to-month",
+    "Yes",
+    "Electronic check"
+  ],
+  "categories": [
+    [
+      "Female",
+      "Male"
+    ],
+    [
+      "No",
+      "Yes"
+    ],
+    [
+      "No",
+      "Yes"
+    ],
+    [
+      "No",
+      "Yes"
+    ],
+    [
+      "No",
+      "Yes"
+    ],
+    [
+      "No",
+      "No phone service",
+      "Yes"
+    ],
+    [
+      "DSL",
+      "Fiber optic",
+      "No"
+    ],
+    [
+      "No",
+      "No internet service",
+      "Yes"
+    ],
+    [
+      "No",
+      "No internet service",
+      "Yes"
+    ],
+    [
+      "No",
+      "No internet service",
+      "Yes"
+    ],
+    [
+      "No",
+      "No internet service",
+      "Yes"
+    ],
+    [
+      "No",
+      "No internet service",
+      "Yes"
+    ],
+    [
+      "No",
+      "No internet service",
+      "Yes"
+    ],
+    [
+      "Month-to-month",
+      "One year",
+      "Two year"
+    ],
+    [
+      "No",
+      "Yes"
+    ],
+    [
+      "Bank transfer (automatic)",
+      "Credit card (automatic)",
+      "Electronic check",
+      "Mailed check"
+    ]
+  ],
+  "feature_names": [
+    "numericos__Tenure Months",
+    "numericos__Monthly Charges",
+    "numericos__Total Charges",
+    "categoricos__Gender_Female",
+    "categoricos__Gender_Male",
+    "categoricos__Senior Citizen_No",
+    "categoricos__Senior Citizen_Yes",
+    "categoricos__Partner_No",
+    "categoricos__Partner_Yes",
+    "categoricos__Dependents_No",
+    "categoricos__Dependents_Yes",
+    "categoricos__Phone Service_No",
+    "categoricos__Phone Service_Yes",
+    "categoricos__Multiple Lines_No",
+    "categoricos__Multiple Lines_No phone service",
+    "categoricos__Multiple Lines_Yes",
+    "categoricos__Internet Service_DSL",
+    "categoricos__Internet Service_Fiber optic",
+    "categoricos__Internet Service_No",
+    "categoricos__Online Security_No",
+    "categoricos__Online Security_No internet service",
+    "categoricos__Online Security_Yes",
+    "categoricos__Online Backup_No",
+    "categoricos__Online Backup_No internet service",
+    "categoricos__Online Backup_Yes",
+    "categoricos__Device Protection_No",
+    "categoricos__Device Protection_No internet service",
+    "categoricos__Device Protection_Yes",
+    "categoricos__Tech Support_No",
+    "categoricos__Tech Support_No internet service",
+    "categoricos__Tech Support_Yes",
+    "categoricos__Streaming TV_No",
+    "categoricos__Streaming TV_No internet service",
+    "categoricos__Streaming TV_Yes",
+    "categoricos__Streaming Movies_No",
+    "categoricos__Streaming Movies_No internet service",
+    "categoricos__Streaming Movies_Yes",
+    "categoricos__Contract_Month-to-month",
+    "categoricos__Contract_One year",
+    "categoricos__Contract_Two year",
+    "categoricos__Paperless Billing_No",
+    "categoricos__Paperless Billing_Yes",
+    "categoricos__Payment Method_Bank transfer (automatic)",
+    "categoricos__Payment Method_Credit card (automatic)",
+    "categoricos__Payment Method_Electronic check",
+    "categoricos__Payment Method_Mailed check"
+  ]
+}

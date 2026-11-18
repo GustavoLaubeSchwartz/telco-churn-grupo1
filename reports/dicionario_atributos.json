@@ -1,0 +1,167 @@
+[
+  {
+    "atributo": "CustomerID",
+    "tipo_apos_limpeza": "str",
+    "papel": "excluido da matriz preditiva"
+  },
+  {
+    "atributo": "Count",
+    "tipo_apos_limpeza": "int64",
+    "papel": "excluido da matriz preditiva"
+  },
+  {
+    "atributo": "Country",
+    "tipo_apos_limpeza": "str",
+    "papel": "excluido da matriz preditiva"
+  },
+  {
+    "atributo": "State",
+    "tipo_apos_limpeza": "str",
+    "papel": "excluido da matriz preditiva"
+  },
+  {
+    "atributo": "City",
+    "tipo_apos_limpeza": "str",
+    "papel": "excluido da matriz preditiva"
+  },
+  {
+    "atributo": "Zip Code",
+    "tipo_apos_limpeza": "int64",
+    "papel": "excluido da matriz preditiva"
+  },
+  {
+    "atributo": "Lat Long",
+    "tipo_apos_limpeza": "str",
+    "papel": "excluido da matriz preditiva"
+  },
+  {
+    "atributo": "Latitude",
+    "tipo_apos_limpeza": "float64",
+    "papel": "excluido da matriz preditiva"
+  },
+  {
+    "atributo": "Longitude",
+    "tipo_apos_limpeza": "float64",
+    "papel": "excluido da matriz preditiva"
+  },
+  {
+    "atributo": "Gender",
+    "tipo_apos_limpeza": "str",
+    "papel": "preditor categorico"
+  },
+  {
+    "atributo": "Senior Citizen",
+    "tipo_apos_limpeza": "str",
+    "papel": "preditor categorico"
+  },
+  {
+    "atributo": "Partner",
+    "tipo_apos_limpeza": "str",
+    "papel": "preditor categorico"
+  },
+  {
+    "atributo": "Dependents",
+    "tipo_apos_limpeza": "str",
+    "papel": "preditor categorico"
+  },
+  {
+    "atributo": "Tenure Months",
+    "tipo_apos_limpeza": "int64",
+    "papel": "preditor numerico"
+  },
+  {
+    "atributo": "Phone Service",
+    "tipo_apos_limpeza": "str",
+    "papel": "preditor categorico"
+  },
+  {
+    "atributo": "Multiple Lines",
+    "tipo_apos_limpeza": "str",
+    "papel": "preditor categorico"
+  },
+  {
+    "atributo": "Internet Service",
+    "tipo_apos_limpeza": "str",
+    "papel": "preditor categorico"
+  },
+  {
+    "atributo": "Online Security",
+    "tipo_apos_limpeza": "str",
+    "papel": "preditor categorico"
+  },
+  {
+    "atributo": "Online Backup",
+    "tipo_apos_limpeza": "str",
+    "papel": "preditor categorico"
+  },
+  {
+    "atributo": "Device Protection",
+    "tipo_apos_limpeza": "str",
+    "papel": "preditor categorico"
+  },
+  {
+    "atributo": "Tech Support",
+    "tipo_apos_limpeza": "str",
+    "papel": "preditor categorico"
+  },
+  {
+    "atributo": "Streaming TV",
+    "tipo_apos_limpeza": "str",
+    "papel": "preditor categorico"
+  },
+  {
+    "atributo": "Streaming Movies",
+    "tipo_apos_limpeza": "str",
+    "papel": "preditor categorico"
+  },
+  {
+    "atributo": "Contract",
+    "tipo_apos_limpeza": "str",
+    "papel": "preditor categorico"
+  },
+  {
+    "atributo": "Paperless Billing",
+    "tipo_apos_limpeza": "str",
+    "papel": "preditor categorico"
+  },
+  {
+    "atributo": "Payment Method",
+    "tipo_apos_limpeza": "str",
+    "papel": "preditor categorico"
+  },
+  {
+    "atributo": "Monthly Charges",
+    "tipo_apos_limpeza": "float64",
+    "papel": "preditor numerico"
+  },
+  {
+    "atributo": "Total Charges",
+    "tipo_apos_limpeza": "float64",
+    "papel": "preditor numerico"
+  },
+  {
+    "atributo": "Churn Label",
+    "tipo_apos_limpeza": "str",
+    "papel": "excluido da matriz preditiva"
+  },
+  {
+    "atributo": "Churn Value",
+    "tipo_apos_limpeza": "int64",
+    "papel": "alvo"
+  },
+  {
+    "atributo": "Churn Score",
+    "tipo_apos_limpeza": "int64",
+    "papel": "excluido da matriz preditiva"
+  },
+  {
+    "atributo": "CLTV",
+    "tipo_apos_limpeza": "int64",
+    "papel": "excluido da matriz preditiva"
+  },
+  {
+    "atributo": "Churn Reason",
+    "tipo_apos_limpeza": "str",
+    "papel": "excluido da matriz preditiva"
+  }
+]

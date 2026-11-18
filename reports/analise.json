@@ -1,0 +1,542 @@
+{
+  "Telco_customer_churn": {
+    "shape": [
+      7043,
+      33
+    ],
+    "duplicados": 0,
+    "ausentes": {
+      "Total Charges": 11,
+      "Churn Reason": 5174
+    },
+    "constantes": [
+      "Count",
+      "Country",
+      "State"
+    ],
+    "tipos": {
+      "CustomerID": "str",
+      "Count": "int64",
+      "Country": "str",
+      "State": "str",
+      "City": "str",
+      "Zip Code": "int64",
+      "Lat Long": "str",
+      "Latitude": "float64",
+      "Longitude": "float64",
+      "Gender": "str",
+      "Senior Citizen": "str",
+      "Partner": "str",
+      "Dependents": "str",
+      "Tenure Months": "int64",
+      "Phone Service": "str",
+      "Multiple Lines": "str",
+      "Internet Service": "str",
+      "Online Security": "str",
+      "Online Backup": "str",
+      "Device Protection": "str",
+      "Tech Support": "str",
+      "Streaming TV": "str",
+      "Streaming Movies": "str",
+      "Contract": "str",
+      "Paperless Billing": "str",
+      "Payment Method": "str",
+      "Monthly Charges": "float64",
+      "Total Charges": "object",
+      "Churn Label": "str",
+      "Churn Value": "int64",
+      "Churn Score": "int64",
+      "CLTV": "int64",
+      "Churn Reason": "str"
+    },
+    "chave": "CustomerID",
+    "duplicados_chave": 0
+  },
+  "Telco_customer_churn_demographics": {
+    "shape": [
+      7043,
+      9
+    ],
+    "duplicados": 0,
+    "ausentes": {},
+    "constantes": [
+      "Count"
+    ],
+    "tipos": {
+      "Customer ID": "str",
+      "Count": "int64",
+      "Gender": "str",
+      "Age": "int64",
+      "Under 30": "str",
+      "Senior Citizen": "str",
+      "Married": "str",
+      "Dependents": "str",
+      "Number of Dependents": "int64"
+    },
+    "chave": "Customer ID",
+    "duplicados_chave": 0
+  },
+  "Telco_customer_churn_location": {
+    "shape": [
+      7043,
+      10
+    ],
+    "duplicados": 0,
+    "ausentes": {},
+    "constantes": [
+      "Count",
+      "Country",
+      "State"
+    ],
+    "tipos": {
+      "Location ID": "str",
+      "Customer ID": "str",
+      "Count": "int64",
+      "Country": "str",
+      "State": "str",
+      "City": "str",
+      "Zip Code": "int64",
+      "Lat Long": "str",
+      "Latitude": "float64",
+      "Longitude": "float64"
+    },
+    "chave": "Customer ID",
+    "duplicados_chave": 0
+  },
+  "Telco_customer_churn_population": {
+    "shape": [
+      1671,
+      3
+    ],
+    "duplicados": 0,
+    "ausentes": {},
+    "constantes": [],
+    "tipos": {
+      "ID": "int64",
+      "Zip Code": "int64",
+      "Population": "int64"
+    },
+    "chave": "Zip Code",
+    "duplicados_chave": 0
+  },
+  "Telco_customer_churn_services": {
+    "shape": [
+      7043,
+      31
+    ],
+    "duplicados": 0,
+    "ausentes": {},
+    "constantes": [
+      "Count",
+      "Quarter"
+    ],
+    "tipos": {
+      "Service ID": "str",
+      "Customer ID": "str",
+      "Count": "int64",
+      "Quarter": "str",
+      "Referred a Friend": "str",
+      "Number of Referrals": "int64",
+      "Tenure in Months": "int64",
+      "Offer": "str",
+      "Phone Service": "str",
+      "Avg Monthly Long Distance Charges": "float64",
+      "Multiple Lines": "str",
+      "Internet Service": "str",
+      "Internet Type": "str",
+      "Avg Monthly GB Download": "int64",
+      "Online Security": "str",
+      "Online Backup": "str",
+      "Device Protection Plan": "str",
+      "Premium Tech Support": "str",
+      "Streaming TV": "str",
+      "Streaming Movies": "str",
+      "Streaming Music": "str",
+      "Unlimited Data": "str",
+      "Contract": "str",
+      "Paperless Billing": "str",
+      "Payment Method": "str",
+      "Monthly Charge": "float64",
+      "Total Charges": "float64",
+      "Total Refunds": "float64",
+      "Total Extra Data Charges": "int64",
+      "Total Long Distance Charges": "float64",
+      "Total Revenue": "float64"
+    },
+    "chave": "Customer ID",
+    "duplicados_chave": 0
+  },
+  "Telco_customer_churn_status": {
+    "shape": [
+      7043,
+      12
+    ],
+    "duplicados": 0,
+    "ausentes": {
+      "Churn Category": 5174,
+      "Churn Reason": 5174
+    },
+    "constantes": [
+      "Count",
+      "Quarter"
+    ],
+    "tipos": {
+      "Status ID": "str",
+      "Customer ID": "str",
+      "Count": "int64",
+      "Quarter": "str",
+      "Satisfaction Score": "int64",
+      "Customer Status": "str",
+      "Churn Label": "str",
+      "Churn Value": "int64",
+      "Churn Score": "int64",
+      "CLTV": "int64",
+      "Churn Category": "str",
+      "Churn Reason": "str"
+    },
+    "chave": "Customer ID",
+    "duplicados_chave": 0
+  },
+  "CustomerChurn": {
+    "shape": [
+      7043,
+      21
+    ],
+    "duplicados": 0,
+    "ausentes": {
+      "Total Charges": 11
+    },
+    "constantes": [],
+    "tipos": {
+      "LoyaltyID": "int64",
+      "Customer ID": "str",
+      "Senior Citizen": "str",
+      "Partner": "str",
+      "Dependents": "str",
+      "Tenure": "int64",
+      "Phone Service": "str",
+      "Multiple Lines": "str",
+      "Internet Service": "str",
+      "Online Security": "str",
+      "Online Backup": "str",
+      "Device Protection": "str",
+      "Tech Support": "str",
+      "Streaming TV": "str",
+      "Streaming Movies": "str",
+      "Contract": "str",
+      "Paperless Billing": "str",
+      "Payment Method": "str",
+      "Monthly Charges": "float64",
+      "Total Charges": "object",
+      "Churn": "str"
+    },
+    "chave": "Customer ID",
+    "duplicados_chave": 0
+  },
+  "alvo": {
+    "0": 5174,
+    "1": 1869
+  },
+  "alvo_coerente": true,
+  "ausentes_total_charges": [
+    {
+      "Tenure Months": 0,
+      "Monthly Charges": 52.55,
+      "Churn Value": 0
+    },
+    {
+      "Tenure Months": 0,
+      "Monthly Charges": 20.25,
+      "Churn Value": 0
+    },
+    {
+      "Tenure Months": 0,
+      "Monthly Charges": 80.85,
+      "Churn Value": 0
+    },
+    {
+      "Tenure Months": 0,
+      "Monthly Charges": 25.75,
+      "Churn Value": 0
+    },
+    {
+      "Tenure Months": 0,
+      "Monthly Charges": 56.05,
+      "Churn Value": 0
+    },
+    {
+      "Tenure Months": 0,
+      "Monthly Charges": 19.85,
+      "Churn Value": 0
+    },
+    {
+      "Tenure Months": 0,
+      "Monthly Charges": 25.35,
+      "Churn Value": 0
+    },
+    {
+      "Tenure Months": 0,
+      "Monthly Charges": 20.0,
+      "Churn Value": 0
+    },
+    {
+      "Tenure Months": 0,
+      "Monthly Charges": 19.7,
+      "Churn Value": 0
+    },
+    {
+      "Tenure Months": 0,
+      "Monthly Charges": 73.35,
+      "Churn Value": 0
+    },
+    {
+      "Tenure Months": 0,
+      "Monthly Charges": 61.9,
+      "Churn Value": 0
+    }
+  ],
+  "razao_ausente": {
+    "No": 5174,
+    "Yes": 0
+  },
+  "resumo_numerico": {
+    "Tenure Months": {
+      "count": 7043.0,
+      "mean": 32.37114865824223,
+      "std": 24.55948102309446,
+      "min": 0.0,
+      "25%": 9.0,
+      "50%": 29.0,
+      "75%": 55.0,
+      "max": 72.0
+    },
+    "Monthly Charges": {
+      "count": 7043.0,
+      "mean": 64.76169246059918,
+      "std": 30.090047097678493,
+      "min": 18.25,
+      "25%": 35.5,
+      "50%": 70.35,
+      "75%": 89.85,
+      "max": 118.75
+    },
+    "Total Charges": {
+      "count": 7032.0,
+      "mean": 2283.3004408418656,
+      "std": 2266.771361883145,
+      "min": 18.8,
+      "25%": 401.45,
+      "50%": 1397.475,
+      "75%": 3794.7375,
+      "max": 8684.8
+    }
+  },
+  "churn_contrato": {
+    "Month-to-month": {
+      "count": 3875,
+      "sum": 1655,
+      "mean": 0.4270967741935484
+    },
+    "One year": {
+      "count": 1473,
+      "sum": 166,
+      "mean": 0.11269517990495587
+    },
+    "Two year": {
+      "count": 1695,
+      "sum": 48,
+      "mean": 0.02831858407079646
+    }
+  },
+  "duplicados_sem_id": 0,
+  "comparacoes": {
+    "CustomerChurn": {
+      "mesmos_clientes": true,
+      "Dependents": 551,
+      "Tenure Months": 0,
+      "Total Charges": 0,
+      "Churn Label": 0
+    },
+    "Telco_customer_churn_demographics": {
+      "mesmos_clientes": true,
+      "Dependents": 0
+    },
+    "Telco_customer_churn_location": {
+      "mesmos_clientes": true,
+      "Zip Code": 264
+    },
+    "Telco_customer_churn_services": {
+      "mesmos_clientes": true,
+      "Tenure Months": 11,
+      "Total Charges": 11
+    },
+    "Telco_customer_churn_status": {
+      "mesmos_clientes": true,
+      "Churn Label": 0
+    }
+  },
+  "dominios": {
+    "Gender": [
+      "Female",
+      "Male"
+    ],
+    "Senior Citizen": [
+      "No",
+      "Yes"
+    ],
+    "Partner": [
+      "No",
+      "Yes"
+    ],
+    "Dependents": [
+      "No",
+      "Yes"
+    ],
+    "Phone Service": [
+      "No",
+      "Yes"
+    ],
+    "Multiple Lines": [
+      "No",
+      "No phone service",
+      "Yes"
+    ],
+    "Internet Service": [
+      "DSL",
+      "Fiber optic",
+      "No"
+    ],
+    "Online Security": [
+      "No",
+      "No internet service",
+      "Yes"
+    ],
+    "Online Backup": [
+      "No",
+      "No internet service",
+      "Yes"
+    ],
+    "Device Protection": [
+      "No",
+      "No internet service",
+      "Yes"
+    ],
+    "Tech Support": [
+      "No",
+      "No internet service",
+      "Yes"
+    ],
+    "Streaming TV": [
+      "No",
+      "No internet service",
+      "Yes"
+    ],
+    "Streaming Movies": [
+      "No",
+      "No internet service",
+      "Yes"
+    ],
+    "Contract": [
+      "Month-to-month",
+      "One year",
+      "Two year"
+    ],
+    "Paperless Billing": [
+      "No",
+      "Yes"
+    ],
+    "Payment Method": [
+      "Bank transfer (automatic)",
+      "Credit card (automatic)",
+      "Electronic check",
+      "Mailed check"
+    ]
+  },
+  "negativos": {
+    "Tenure Months": 0,
+    "Monthly Charges": 0,
+    "Total Charges": 0
+  },
+  "coerencia_servicos": {
+    "multiple_sem_telefone": 0,
+    "Online Security": 0,
+    "Online Backup": 0,
+    "Device Protection": 0,
+    "Tech Support": 0,
+    "Streaming TV": 0,
+    "Streaming Movies": 0
+  },
+  "preprocessamento": [
+    {
+      "fold": 1,
+      "treino": 5634,
+      "validacao": 1409,
+      "features": 46,
+      "medianas_treino": [
+        29.0,
+        70.4,
+        1387.4
+      ]
+    },
+    {
+      "fold": 2,
+      "treino": 5634,
+      "validacao": 1409,
+      "features": 46,
+      "medianas_treino": [
+        28.0,
+        70.3,
+        1388.45
+      ]
+    },
+    {
+      "fold": 3,
+      "treino": 5634,
+      "validacao": 1409,
+      "features": 46,
+      "medianas_treino": [
+        29.0,
+        70.4,
+        1414.45
+      ]
+    },
+    {
+      "fold": 4,
+      "treino": 5635,
+      "validacao": 1408,
+      "features": 46,
+      "medianas_treino": [
+        29.0,
+        70.35,
+        1412.4
+      ]
+    },
+    {
+      "fold": 5,
+      "treino": 5635,
+      "validacao": 1408,
+      "features": 46,
+      "medianas_treino": [
+        29.0,
+        70.3,
+        1390.6
+      ]
+    }
+  ],
+  "ambiente": {
+    "numpy": "2.3.5",
+    "pandas": "3.0.1",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1",
+    "openpyxl": "3.1.5"
+  },
+  "arquivos_origem": {
+    "CustomerChurn.xlsx": "55ebfbec2378b2e63030d804cb06a2845f75c321f590d3e04bd152ea4c18ab93",
+    "Telco_customer_churn.xlsx": "bfd6e733055b7557884cb33bcbb8d5e5d628c5be339fbe58bea0701da9a25de8",
+    "Telco_customer_churn_demographics.xlsx": "cf8125d79edcf08433ad386ad6551bb86ab8f3ddf1263bcf6ee80d3f05eb03fa",
+    "Telco_customer_churn_location.xlsx": "7f46091576b06e779d8dccccd3e75bb0c9253c1e8fb8067d37aec38d89d365fa",
+    "Telco_customer_churn_population.xlsx": "dc410f5f9402a699013b93d8efae727e7bd91e25a0d56a05801e4376932e7740",
+    "Telco_customer_churn_services.xlsx": "ce28cd4b53a96178e61608b1eef231ed1840ca10bf73138eb94c6f115c6721b4",
+    "Telco_customer_churn_status.xlsx": "eadc509d48d562f67a00d6865b16f6b0b3d0fd02593320ee7c777b922ae14074"
+  }
+}
