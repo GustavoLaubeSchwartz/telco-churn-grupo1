@@ -1,10 +1,10 @@
 # Telco Customer Churn — Grupo 1
 
-Análise exploratória e pré-processamento para os tópicos **3.1 e 3.2** do trabalho de Inteligência de Negócios 2026/2. O projeto contém o código Python, as sete planilhas fornecidas, a base limpa, as cinco partições transformadas e os registros das verificações.
-
-**Escopo:** preparação dos dados. Ainda não foram treinados nem comparados KNN, SVM, Random Forest e XGBoost, exigidos nas etapas seguintes para o Grupo 1. Não há métricas de classificadores neste repositório.
+Trabalho prático da disciplina de Inteligência de Negócios 2026/2 sobre previsão de cancelamento de clientes (*churn*) com a base Telco Customer Churn. O repositório contém todo o pipeline desenvolvido pelo grupo: análise exploratória, pré-processamento sem vazamento de dados, particionamento estratificado e o treinamento/avaliação dos quatro classificadores do Grupo 1: **KNN, SVM, Random Forest e XGBoost**.
 
 ## Resultados verificados
+
+### Preparação dos dados (Itens 3.1 e 3.2)
 
 | Verificação | Resultado |
 |---|---:|
@@ -18,23 +18,45 @@ Análise exploratória e pré-processamento para os tópicos **3.1 e 3.2** do tr
 | Linhas integralmente duplicadas na base principal | 0 |
 | Partições estratificadas | 5 |
 
-Os números decorrem dos arquivos em `data/raw`, não de resultados de um modelo. A razão entre a classe majoritária e a minoritária é de aproximadamente 2,77:1.
+A razão entre a classe majoritária e a minoritária é de aproximadamente 2,77:1.
+
+### Desempenho dos modelos (Itens 3.3 a 3.6)
+
+Resultados obtidos na validação cruzada estratificada em 5 partições (média ± desvio-padrão):
+
+| Modelo / Configuração | Acurácia | Precisão | Revocação | F1-Score |
+|---|:---:|:---:|:---:|:---:|
+| **KNN (A: k=5)** | 0,7789 ± 0,0114 | 0,5875 ± 0,0249 | 0,5645 ± 0,0252 | 0,5754 ± 0,0189 |
+| **KNN (B: k=11)** | 0,7907 ± 0,0133 | 0,6118 ± 0,0259 | 0,5784 ± 0,0316 | 0,5945 ± 0,0271 |
+| **SVM (A: Linear)** | 0,8063 ± 0,0097 | 0,6592 ± 0,0210 | 0,5597 ± 0,0248 | 0,6052 ± 0,0211 |
+| **SVM (B: RBF)** | 0,8090 ± 0,0085 | 0,6824 ± 0,0238 | 0,5254 ± 0,0172 | 0,5935 ± 0,0168 |
+| **RF (A: Baseline, 300 árvores)** | 0,7964 ± 0,0073 | 0,6489 ± 0,0188 | 0,5083 ± 0,0308 | 0,5696 ± 0,0210 |
+| **RF (B: Regularizado, max_depth=12)** | 0,8093 ± 0,0085 | 0,6743 ± 0,0211 | 0,5452 ± 0,0246 | 0,6027 ± 0,0190 |
+| **XGBoost (A: Baseline)** | 0,8079 ± 0,0096 | 0,6649 ± 0,0248 | 0,5581 ± 0,0218 | 0,6065 ± 0,0186 |
+| **XGBoost (B: Regularizado)** | 0,8055 ± 0,0096 | 0,6613 ± 0,0250 | 0,5490 ± 0,0253 | 0,5995 ± 0,0199 |
+
+*Linha de base da classe majoritária: 73,46% de acurácia.*
 
 ## Arquivos principais
 
 ```text
-src/analise_preprocessamento.py       Código de análise, tratamento e exportação
-notebooks/analise_preprocessamento.ipynb  Interface de notebook para o mesmo código
-data/raw/                           Sete planilhas originais
-data/processed/telco_base_limpa.csv   7.043 linhas, 19 preditores e alvo
-data/processed/rastreabilidade.csv   Correspondência entre posição e CustomerID
-data/processed/particoes.csv         Partição de validação de cada linha
-data/processed/folds/fold_1.npz       Matrizes da primeira partição (há cinco)
-data/processed/folds/fold_1_parametros.json  Parâmetros aprendidos no treino
-reports/analise.json                 Estatísticas, auditoria e hashes das fontes
-reports/dicionario_atributos.json    Tipo e papel de cada atributo original
-docs/TRATAMENTOS.md                  Decisões e justificativas dos tratamentos
-tests/test_outputs.py               Verificações dos arquivos produzidos
+notebooks/experimentos_modelos.ipynb      Treinamento e avaliação de KNN, SVM, RF e XGBoost
+notebooks/analise_preprocessamento.ipynb  Notebook de análise exploratória e pré-processamento
+src/analise_preprocessamento.py           Código de análise, tratamento e exportação dos folds
+src/gerar_graficos_relatorio.py           Script de geração das figuras e matrizes de confusão
+data/raw/                                Sete planilhas originais fornecidas
+data/processed/telco_base_limpa.csv       Base limpa com 19 preditores e alvo (7.043 linhas)
+data/processed/rastreabilidade.csv       Correspondência entre posição de linha e CustomerID
+data/processed/particoes.csv             Partição de validação atribuída a cada cliente
+data/processed/folds/fold_N.npz           Matrizes pré-processadas de cada partição (1 a 5)
+data/processed/folds/fold_N_parametros.json Parâmetros aprendidos no treino de cada partição
+reports/modelos/                         Resultados em CSV por fold, resumo e matrizes
+reports/modelos/fig_comparativo_metricas.png Gráfico comparativo de desempenho dos modelos
+reports/modelos/fig_matrizes_confusao.png    Visualização das 8 matrizes de confusão
+reports/analise.json                     Estatísticas detalhadas e hashes das fontes
+reports/dicionario_atributos.json        Tipo e papel de cada atributo original
+docs/TRATAMENTOS.md                      Decisões e justificativas dos tratamentos
+tests/test_outputs.py                   Verificações automatizadas dos arquivos gerados
 ```
 
 Os CSVs usam **UTF-8, vírgula como delimitador e ponto como separador decimal**. Células vazias representam ausência. `row_index` é a posição de linha, iniciando em zero, na base limpa; não deve ser incluído como preditor.
@@ -59,23 +81,23 @@ Ative o ambiente:
 source .venv/bin/activate
 ```
 
-Instale as dependências e execute:
+Instale as dependências e execute os passos necessários:
 
 ```bash
+# 1. Instalar dependências
 python -m pip install -r requirements.txt
+
+# 2. Gerar a base tratada e os folds (opcional se já clonados)
 python src/analise_preprocessamento.py
+
+# 3. Rodar testes automatizados de integridade
 python -m unittest discover -s tests -v
+
+# 4. Gerar os gráficos e matrizes de confusão
+python src/gerar_graficos_relatorio.py
 ```
 
-`requirements-lock.txt` registra as versões utilizadas na geração conferida, caso seja necessário reproduzir esse ambiente específico. O notebook pode ser aberto no Jupyter ou VS Code, com o mesmo ambiente Python. Não contém dependências de caminhos pessoais absolutos.
-
-Para usar outra pasta com as mesmas sete planilhas ou guardar os resultados em outro diretório:
-
-```bash
-python src/analise_preprocessamento.py --data-dir caminho/das/planilhas --output-dir saida
-```
-
-A execução gera novamente os arquivos de `data/processed` e `reports` dentro do diretório de saída; não altera as planilhas de entrada. Os testes usam os arquivos entregues na raiz deste repositório.
+O treinamento e avaliação de todos os classificadores está documentado passo a passo no notebook `notebooks/experimentos_modelos.ipynb`, que pode ser executado no Jupyter Notebook ou VS Code.
 
 ## Qual base usar
 
@@ -83,18 +105,18 @@ A execução gera novamente os arquivos de `data/processed` e `reports` dentro d
 
 `data/processed/telco_base_limpa.csv` contém os **19 preditores selecionados e Churn Value**. As categorias estão preservadas, Total Charges foi convertido para numérico e os 11 espaços em branco foram convertidos em ausências.
 
-**Essas 11 ausências são intencionais nesta camada.** Imputar e padronizar toda a base antes da validação cruzada faria a validação influenciar os parâmetros de treino. Portanto, o tratamento dependente de estatísticas é aplicado dentro de cada partição.
+**Essas 11 ausências são intencionais nesta camada.** Imputar e padronizar toda a base antes da validação cruzada faria a validação influenciar os parâmetros de treino (vazamento de dados). Portanto, o tratamento dependente de estatísticas é aplicado estritamente dentro de cada partição.
 
 ### Matrizes transformadas
 
 Os cinco arquivos `fold_N.npz` contêm dados já imputados, codificados e padronizados, sem valores ausentes ou infinitos. Cada arquivo possui:
 
-- `X_train` e `X_valid`: matrizes com 46 atributos, sem alvo ou identificadores.
+- `X_train` e `X_valid`: matrizes com 46 atributos numéricos, sem alvo ou identificadores.
 - `y_train` e `y_valid`: classes 0 e 1.
 - `train_indices` e `valid_indices`: posições na base limpa para auditoria.
-- `feature_names`: nomes das 46 colunas.
+- `feature_names`: nomes das 46 colunas após codificação one-hot e padronização.
 
-Exemplo de leitura:
+Exemplo de leitura em Python:
 
 ```python
 import numpy as np
@@ -109,37 +131,32 @@ with np.load("data/processed/folds/fold_1.npz", allow_pickle=False) as dados:
 
 Cada cliente participa da validação exatamente uma vez. As três primeiras partições possuem 5.634 clientes de treino e 1.409 de validação; as duas últimas, 5.635 e 1.408. Foi usado `StratifiedKFold(n_splits=5, shuffle=True, random_state=42)`.
 
-**Não concatene as matrizes das cinco partições como se fossem uma nova base de clientes.** Os treinos se sobrepõem e possuem estatísticas próprias. Para futuras buscas de hiperparâmetros com divisões internas, ajuste o pré-processamento novamente dentro de cada treino interno, usando a base limpa e um `Pipeline`. Os arquivos exportados atendem somente às partições registradas.
-
 ## Tratamentos aplicados
 
 1. Leitura com `keep_default_na=False`, preservando categorias válidas como `None` em Offer.
 2. Auditoria de número de registros, tipos, ausências, duplicatas, chaves e constantes nas sete fontes.
 3. Uso de `Telco_customer_churn.xlsx` como versão principal, sem misturar valores divergentes das outras versões.
-4. Separação de `Churn Value` como alvo e exclusão de identificadores, constantes, campos geográficos fora do recorte e campos que poderiam vazar o desfecho.
+4. Separação de `Churn Value` como alvo e exclusão de identificadores, constantes, campos geográficos fora do recorte e campos com potencial de vazamento de desfecho.
 5. Conversão de Total Charges para numérico e remoção de espaços nas extremidades das categorias selecionadas.
 6. Imputação numérica pela mediana do **treino de cada partição**.
 7. `OneHotEncoder(handle_unknown="ignore", sparse_output=False)`, mantendo todos os níveis categóricos.
 8. `StandardScaler` nas três variáveis numéricas, após imputação. Os indicadores one-hot permanecem em 0/1.
-9. Conferência de dimensões, finitude e médias padronizadas. Exportação das matrizes, índices, nomes e parâmetros.
+9. Exportação das matrizes transformadas das 5 partições para treinamento e avaliação dos classificadores.
 
-Não foram removidos clientes, aplicados SMOTE ou outro reamostramento, nem criados resultados de classificação. Consulte [todas as decisões em TRATAMENTOS.md](docs/TRATAMENTOS.md).
+Consulte [todas as decisões em TRATAMENTOS.md](docs/TRATAMENTOS.md).
 
 ## Origem e limites
 
 A IBM descreve a amostra como dados de uma empresa **fictícia** de telecomunicações na Califórnia. As fontes e o dicionário estão na [documentação Telco Customer Churn da IBM](https://community.ibm.com/community/user/blogs/steven-macko/2019/07/11/telco-customer-churn-1113).
 
-Foram recebidos arquivos em versões diferentes. Os conjuntos de identificadores coincidem, mas há 551 divergências em Dependents entre a base principal e CustomerChurn, 264 em CEP frente a location e 11 em permanência/cobrança frente a services. Por isso, as planilhas não foram concatenadas nem combinadas silenciosamente.
-
-Os arquivos foram incluídos para reprodução acadêmica com sua atribuição original. Este repositório não reivindica autoria sobre o dataset nem atribui uma nova licença aos materiais da IBM. A publicação pública do repositório não substitui os termos da fonte.
-
-A base é transversal: os experimentos posteriores não demonstrarão, por si só, previsão prospectiva de cancelamento. A disponibilidade temporal das variáveis deve ser considerada antes de qualquer aplicação real. A seleção de variáveis é uma decisão metodológica, não uma comprovação de que as excluídas seriam irrelevantes.
+A base é transversal: os experimentos realizados não comprovam previsão prospectiva de cancelamento, servindo para comparação metodológica dos algoritmos sob as mesmas condições experimentais.
 
 ## Referências e uso de IA
 
 - [IBM — Telco customer churn](https://community.ibm.com/community/user/blogs/steven-macko/2019/07/11/telco-customer-churn-1113)
-- [Scikit-learn — prevenção de vazamento de informação](https://scikit-learn.org/stable/common_pitfalls.html)
+- [Scikit-learn — Prevenção de vazamento de informação](https://scikit-learn.org/stable/common_pitfalls.html)
 - [Scikit-learn — OneHotEncoder](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html)
 - [Scikit-learn — StandardScaler](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html)
+- [XGBoost Documentation](https://xgboost.readthedocs.io/)
 
-Foi utilizado ChatGPT para apoiar a inspeção das fontes, a elaboração e execução do código, a documentação e a organização do repositório. Os resultados registrados foram calculados sobre os arquivos fornecidos. O código foi adaptado da análise inicial para receber caminhos por argumentos e exportar as bases, sem mudar o recorte de 19 preditores.
+Foi utilizado ChatGPT como ferramenta auxiliar para apoio à inspeção dos dados, elaboração do código de análise/modelagem, documentação e organização do projeto. Todos os cálculos, matrizes e métricas foram gerados a partir da execução do código sobre as bases fornecidas.
